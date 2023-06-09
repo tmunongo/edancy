@@ -1,9 +1,15 @@
 <?php
 // Database connection settings
-$host = "localhost";
-$dbName = "your_database_name";
-$username = "your_username";
-$password = "your_password";
+$host = "mariadb";
+$dbName = "edancy";
+$username = "root";
+$password = "password";
 
 // Establish database connection
-$conn = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
+try {
+    $db = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
+    // Set PDO attributes or perform other initialization steps
+} catch (PDOException $e) {
+    echo 'Connection failed: ' . $e->getMessage();
+    // Handle the connection error gracefully
+}

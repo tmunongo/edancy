@@ -257,7 +257,7 @@ body {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Replace with desired box shadow */
   display: flex;
   flex-direction: column;
-  height: 20rem; /* Adjust the height as needed */
+  height: 100%; /* Adjust the height as needed */
   justify-content: space-between;
   margin-right: 20px;
   padding: 2rem;
@@ -272,10 +272,12 @@ body {
   font-size: 1.2rem; /* Adjust the font size as needed */
   font-weight: 500; /* Adjust the font weight as needed */
   margin-bottom: 0.5rem;
+  width: 250px;
 }
 
 .carousel-item-description {
   color: #000; /* Replace with desired text color */
+  width: 200px;
 }
 
 .carousel-item-gap {
@@ -285,10 +287,12 @@ body {
 /* the slides */
 .slick-slide {
   background-color: #ebf9ff;
+  box-sizing: border-box;
   margin: 0 27px;
 }
 
 /* the parent */
 .slick-list {
+  height: 300px;
   margin: 0 -27px;
 }

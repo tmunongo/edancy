@@ -70,7 +70,7 @@
             <p class="services-subtitle mb-2 text-center text-gray-500 text-sm italic">
                 What We Do
             </p>
-            <div class="carousel-container flex items-center justify-around" style="min-height: 250px;">
+            <div class="carousel-container flex items-center justify-around" style="min-height: 350px;">
                 <div class="carousel">
                     <!-- Carousel items go here -->
                 </div>
@@ -118,8 +118,8 @@
                 dots: true,
                 centerMode: true,
                 focusOnSelect: true,
-                // autoplay: true,
-                // autoplaySpeed: 2000,
+                autoplay: true,
+                autoplaySpeed: 2000,
                 responsive: [{
                         breakpoint: 620,
                         settings: {
