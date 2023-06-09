@@ -1,0 +1,294 @@
+/* Global styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ebf9ff;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 0;
+  padding: 0px 20px 20px 20px;
+}
+
+/* Navbar styles */
+.navbar {
+  align-items: center;
+  background-color: rgba(154, 190, 231, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  position: fixed;
+  transition: background-color 100ms ease-in-out;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-nav li {
+  margin-left: 10px;
+}
+
+.navbar-nav li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-scroll {
+  backdrop-filter: backdrop-blur(10px);
+}
+
+/* Home page styles */
+.home-banner {
+  background-color: rgba(154, 190, 231, 0.75);
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.home-banner h1 {
+  font-size: 36px;
+  color: #000;
+}
+
+/* Admin login page styles */
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #b2d8d8;
+  border-radius: 8px;
+}
+
+.login-container h1 {
+  font-size: 24px;
+  color: #c2d6eb;
+}
+
+.login-form {
+  margin-top: 20px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #c2d6eb;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #c2d6eb;
+  border-radius: 4px;
+}
+
+.login-form input[type="submit"] {
+  background-color: #c2d6eb;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Admin dashboard styles */
+.dashboard-heading {
+  background-color: #c2d6eb;
+  color: #fff;
+  padding: 10px;
+}
+
+.dashboard-container {
+  display: flex;
+  margin-top: 20px;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #b2d8d8;
+  padding: 10px;
+}
+
+.main-content {
+  flex-grow: 1;
+  background-color: #fff;
+  padding: 20px;
+}
+
+/* Banner */
+/* Add your custom styles here */
+
+.banner {
+  min-height: 50%;
+  width: 100%;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-left: 1px;
+  padding-right: 18px;
+  padding-right: 24px;
+}
+
+.banner-content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.banner-title {
+  width: 100%;
+}
+
+.highlighted-text {
+  /* Add your color styles */
+}
+
+.banner-subtitle {
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.banner-description {
+  width: 66.666667%;
+  margin-bottom: 0.75rem;
+}
+
+.banner-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.banner-button {
+  background-color: #0496ff;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
+.banner-button-services {
+  margin-right: 2rem;
+}
+
+.banner-image {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .banner-content {
+    width: 66%;
+  }
+  .banner-image {
+    display: block;
+    width: 33%;
+  }
+}
+
+/* About Styles */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 1px;
+  padding-right: 24px;
+  margin-top: 10px;
+  margin-top: 24px;
+}
+
+.about-image {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .about-image {
+    display: block;
+    width: 33%;
+  }
+  .about-content {
+    max-width: 66%;
+  }
+}
+
+.about-image img {
+  /* Add your image styles */
+}
+
+.about-content {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 8px;
+}
+
+.about-title {
+  /* Add your title styles */
+}
+
+.about-description {
+  /* Add your description styles */
+}
+
+/* Carousel Item */
+.carousel-item {
+  align-items: center;
+  background-color: #f3f4f6; /* Replace with desired background color */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Replace with desired box shadow */
+  display: flex;
+  flex-direction: column;
+  height: 20rem; /* Adjust the height as needed */
+  justify-content: space-between;
+  margin-right: 20px;
+  padding: 2rem;
+}
+
+.carousel-item-icon {
+  height: 4rem; /* Adjust the height as needed */
+  width: 4rem; /* Adjust the width as needed */
+}
+
+.carousel-item-title {
+  font-size: 1.2rem; /* Adjust the font size as needed */
+  font-weight: 500; /* Adjust the font weight as needed */
+  margin-bottom: 0.5rem;
+}
+
+.carousel-item-description {
+  color: #000; /* Replace with desired text color */
+}
+
+.carousel-item-gap {
+  margin-right: 20px; /* Adjust the desired gap size */
+}
+
+/* the slides */
+.slick-slide {
+  background-color: #ebf9ff;
+  margin: 0 27px;
+}
+
+/* the parent */
+.slick-list {
+  margin: 0 -27px;
+}
