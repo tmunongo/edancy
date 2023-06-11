@@ -1,0 +1,38 @@
+/* Admin Body */
+.admin-body {
+  align-items: flex-start;
+  display: flex;
+  justify-content: start;
+}
+
+li a .fa {
+  color: coral;
+}
+
+li a .fas {
+  color: coral;
+}
+
+.main-container {
+  padding: 12px;
+  width: 60%;
+}
+
+.sidebar-container {
+  width: 30%;
+}
+
+/* sidebar */
+.sidebar {
+  background-color: antiquewhite;
+  min-height: 100vh;
+}
+
+.sidebar-item {
+  align-items: center;
+  display: flex;
+  height: 72px;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 0.5px solid gainsboro;
+}

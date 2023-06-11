@@ -1,6 +1,6 @@
 <?php
-include_once("../config/db.php");
 session_start();
+include_once("../config/db.php");
 
 // Check if the user is already authenticated
 if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true) {
@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($password, $user['password_hash'])) {
             // Password matches, set the authentication session variable
             $_SESSION['authenticated'] = true;
+            $_SESSION['user'] = $user;
             header('Location: index.php');
             exit;
         } else {
@@ -54,11 +55,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h1>Admin Login</h1>
             <!-- Add login form here -->
             <form method="POST" action="" class="login-form">
-                <label for="username">Email:</label>
+                <label for="email">Email:</label>
                 <input type="email" name="email" id="email" required><br>
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password" required><br>
                 <input type="submit" value="Log In">
+                <p>
+                    <a href="register.php">
+                        No Account? Register Here.
+                    </a>
+                </p>
                 <?php if (isset($error)) {
                     echo "<p class='text-primary-emphasis bg-primary-subtle border border-primary-subtle'>$error</p>";
                 } ?>
