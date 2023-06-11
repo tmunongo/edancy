@@ -1,9 +1,9 @@
 <?php
 // Database connection settings
-$host = "mariadb";
+$host = "localhost";
 $dbName = "edancy";
 $username = "root";
-$password = "password";
+$password = "";
 
 // Establish database connection
 try {

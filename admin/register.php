@@ -15,12 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $fullname = $_POST['fullname'];
+    $id = uniqid();
 
     // Hash the password
     $hash = password_hash($password, PASSWORD_BCRYPT);
 
-    $query = "INSERT INTO users (email, full_name, password_hash) VALUES (:email,:full_name, :hash)";
+    $query = "INSERT INTO users (id, email, full_name, password_hash) VALUES (:id, :email,:full_name, :hash)";
     $stmt = $db->prepare($query);
+    $stmt->bindParam(':id', $id);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':full_name', $fullname);
     $stmt->bindParam(':hash', $hash);

@@ -21,7 +21,7 @@ $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $post['title']; ?></h5>
                         <p class="card-text"><?php echo $post['summary']; ?></p>
-                        <a href="<?php echo $post['link']; ?>" class="btn btn-primary">Read More</a>
+                        <a href="post/id?=<?php echo $post['id']; ?>" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>

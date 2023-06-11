@@ -1,4 +1,9 @@
 <?php
+session_start();
+include_once("../../config/db.php");
+
+$user = $_SESSION['user'];
+
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the form data
@@ -29,13 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($content)) {
         $errors[] = "Content is required.";
     }
-
+    $targetFile;
     // Check if file is uploaded
     if (!isset($_FILES['cover']) || $_FILES['cover']['error'] === UPLOAD_ERR_NO_FILE) {
         $errors[] = "Cover image is required.";
     } else {
         // Process the uploaded file
-        $targetDirectory = '../../assets/images/covers/';
+        $targetDirectory = '../assets/images/covers/';
         $targetFile = $targetDirectory . basename($_FILES['cover']['name']);
         $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
@@ -54,21 +59,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (file_exists($targetFile)) {
             $errors[] = "Cover image file already exists.";
         }
-
-        // Move the uploaded file to the target directory
-        if (empty($errors)) {
-            if (!move_uploaded_file($_FILES['cover']['tmp_name'], $targetFile)) {
-                $errors[] = "Failed to upload cover image.";
-            }
-        }
     }
-
+    
     // If there are no errors, insert the post into the database
     if (empty($errors)) {
         // Database insertion code here (adjust as per your database structure)
-
+        $query = "INSERT INTO posts (id, title, category_id, summary, content, cover, author_id) VALUES (:id, :title, :category_id, :summary, :content, :cover, :author_id)";
+        $stmt = $db->prepare($query);
+        $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':category_id', $category);
+        $stmt->bindParam(':author_id', $user['id']);
+        $stmt->bindParam(':content', $content);
+        $stmt->bindParam(':summary', $summary);
+        $stmt->bindParam(':id', uniqid());
+        $stmt->bindParam(':cover', $targetFile);
+        $stmt->execute();
+        
+        // Move the uploaded file to the target directory
+        if (!move_uploaded_file($_FILES['cover']['tmp_name'], $targetFile)) {
+            $errors[] = "Failed to upload cover image.";
+        }
         // Redirect to index.php after successful insertion
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit;
     } else {
         echo $errors[0];

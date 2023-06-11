@@ -22,6 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    echo "<script> console.log(" . json_encode($user) . "); </script>";
+
     // Check if a user with the given email exists
     if ($user) {
         // Verify the password
