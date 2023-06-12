@@ -23,7 +23,7 @@
     <?php
     include_once "includes/navbar.php";
     ?>
-    <div class="banner home-banner" style="margin-top: 0px;" id="banner">
+    <div class="banner home-banner" style="margin-top: 0px;   padding-top: 60px;" id="banner">
         <div class="banner-content">
             <h1 class="banner-title">
                 Welcome to <span class="highlighted-text">Edancy</span> International Consultancy
@@ -32,7 +32,9 @@
                 Understanding health beyond diseases.
             </h3>
             <div class="banner-description">
-                EIC is a service provider...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum turpis vel elit accumsan condimentum. Ut eu purus dui. Duis ullamcorper vitae augue eu mollis.
+                <p class="banner-description">
+                    EIC is a service provider...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum turpis vel elit accumsan condimentum. Ut eu purus dui. Duis ullamcorper vitae augue eu mollis.
+                </p>
             </div>
             <div class="banner-buttons">
                 <button class="banner-button banner-button-services">
@@ -44,7 +46,7 @@
             </div>
         </div>
         <div class="banner-image">
-            <div>
+            <div class="banner-image-inner">
                 <img src="./assets/images/Public health-amico.svg" alt="Banner image" />
             </div>
         </div>
@@ -62,8 +64,71 @@
                 </div>
             </div>
         </div>
+         <!--  The Team section -->
+         <section class="">
+            <div class="container">
+                <h3 class="text-center px-8" style="margin-bottom: 24px;">
+                    The Founders
+                </h3>
+                <div class="row d-flex align-items-center justify-content-center px-8">
+                    <div class="col-lg-6 col-xl-4 mb-4">
+                        <div class="card" style="min-height: 550px;">
+                            <img src="link_to_image" class="card-img-top" alt="Founder Image">
+                            <div class="card-body">
+                            <h5 class="card-title">Dr. Edmore Munongo</h5>
+                            <p class="card-text">Founding Co-Director</p>
+                            <ul>
+                                <li>
+                                    <p class="card-text">PhD in Sociology of Medicine candidate, North Western University, South Africa, since 2016 </p>
+                                </li>
+                                <li>
+                                    <p class="card-text">Master of Philosophy in HIV/AIDS Management, Stellenbosch University, South Africa, 2012</p>
+                                </li>
+                                <li>
+                                    <p class="card-text">Post Graduate Diploma in HIV/AIDS Management, Stellenbosch University, South Africa, 2010</p>
+                                </li>
+                                <li>
+                                    <p class="card-text">Certificate in Sexual and Reproductive Health and Rights, Geneva Foundation of Medical Education and Research, Switzerland, May 2013-February 2014</p>
+                                </li>
+                                <li>
+                                    <p class="card-text">Masters in Business Administration, Midlands State University, Zimbabwe, 2015</p>
+                                </li>
+                                <li>
+                                    <p class="card-text">Bachelor of Medicine/Bachelor of Surgery (MBChB), University of Zimbabwe, Zimbabwe, 1995</p>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4 mb-4">
+                        <div class="card" style="min-height: 550px;">
+                            <img src="link_to_image" class="card-img-top" alt="Founder Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Mrs Ancy Manika-Munongo</h5>
+                                <p class="card-text">Founding Co-Director</p>
+                                <ul>
+                                    <li>
+                                        <p class="card-text">Post Graduate Diploma in Child Sensitive Social Policies, Women’s University in Africa, 2016</p>
+                                    </li>
+                                    <li>
+                                        <p class="card-text">BSc (Hons) in Sociology and Gender Development Studies, Women’s University in Africa, 2014</p>
+                                    </li>
+                                    <li>
+                                        <p class="card-text">Youth Leader, Midlands Aids Services Organization, 2000</p>
+                                    </li>
+                                    <li>
+                                        <p class="card-text">Diploma in Education, Bondolfi Teacher’s College, 1995</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat the above card markup for each employee -->
+                </div>
+            </div>
+        </section>
         <!-- Services -->
-        <div class="services-container mt-20 md:px-8 pt-2 pb-16 bg-althlfaded">
+        <div class="services-container mt-20 md:px-8 pt-2 pb-16">
             <h2 class="services-title mt-3 mb-1 text-center text-althighlight">
                 Services
             </h2>
@@ -71,10 +136,62 @@
                 What We Do
             </p>
             <div class="carousel-container flex items-center justify-around" style="min-height: 350px;">
-                <div class="carousel">
+            <div id="carousel-body" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
                     <!-- Carousel items go here -->
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
             </div>
+          <!-- Contact Us  -->
+          <section id="contact" class="bg-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                    <h2>Contact Us</h2>
+                    <p class="lead">
+                        Need to get in touch? Do not hesitate to call
+                        <a href="tel:0717486403">0717486403</a> /
+                        <a href="tel:077828533">0778455415</a> or email us directly at
+                        <a href="mailto:inquiries@hearts.co.zw">inquiries@edancy.co.zw</a>.
+                        You can also fill in the form below and we'll respond.
+                    </p>
+                    </div>
+                    <form id="contactForm" method="POST" action="submit-contact-form.php">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </section>
         </div>
 
     </div>
@@ -83,60 +200,32 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            // Iterate over the serviceData array
-            $.each(serviceData, function(index, item) {
-                // Generate the carousel item dynamically
-                var carouselItem = $('<div class="carousel-item"></div>');
-                // Add a class for the gap between items
-                carouselItem.addClass('carousel-item-gap');
+       $.each(serviceData, function(index, item) {
+        var carouselItem = $('<div class="carousel-item"></div>');
 
-                var icon = $('<img alt="icon">');
-                icon.attr('src', item.icon);
-                icon.addClass('carousel-item-icon');
+        var itemContent = $('<div class="flex flex-col items-center justify-around mx-2 w-72 md:w-96 h-full bg-[#F2F8F3] shadow-md p-8"></div>');
 
-                var title = $('<h3></h3>');
-                title.text(item.title);
-                title.addClass('carousel-item-title');
+        var image = $('<img class="d-block m-auto carousel-item-icon" alt="icon">');
+        image.attr('src', item.icon);
 
-                var description = $('<p></p>');
-                description.text(item.description);
-                description.addClass('carousel-item-description');
+        var title = $('<h3 class="text-lg font-medium mb-2 text-center"></h3>').text(item.title);
+        var description = $('<p class="text-gray-600 text-center"></p>').text(item.description);
 
-                carouselItem.append(icon, title, description);
+        itemContent.append(image, title, description);
+        carouselItem.append(itemContent);
 
-                // Append the carousel item to the carousel container
-                $('.carousel').append(carouselItem);
-            });
+        if (index === 0) {
+            carouselItem.addClass('active');
+        }
 
+        $('.carousel-inner').append(carouselItem);
+    });
 
-            // Initialize the Slick Carousel
-            $('.carousel').slick({
-                // Slick carousel configuration options
-                // Add your options here
-                arrows: true,
-                slidesToShow: 3,
-                dots: true,
-                centerMode: true,
-                focusOnSelect: true,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                responsive: [{
-                        breakpoint: 620,
-                        settings: {
-                            arrows: true,
-                            variableWidth: true
-                        }
-                    },
-                    {
-                        breakpoint: 345,
-                        settings: {
-                            arrows: true,
-                            variableWidth: true
-                        }
-                    }
-                ]
-            });
-        });
+    $('.carousel').carousel({
+        interval: 3500
+    });
+});
+
     </script>
 </body>
 

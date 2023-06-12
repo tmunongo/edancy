@@ -1,3 +1,12 @@
+/* Variables */
+:root {
+  --primary-color: rgba(154, 190, 231, 0.75);
+  --secondary-color: #c2d6eb;
+  --secondary-alt: #E5F1E8;
+  --highlight: #FFCF99;
+  --font-size: 16px;
+}
+
 /* Global styles */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -11,6 +20,20 @@ body {
 }
 
 /* Navbar styles */
+.nav {
+  align-items: center;
+  display: flex;
+  height: 96px;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.navbar-brand {
+  display: block;
+  margin: auto;  
+  width: 40%;
+}
+
 .navbar {
   align-items: center;
   background-color: rgba(154, 190, 231, 0.75);
@@ -56,11 +79,13 @@ body {
 }
 
 /* Home page styles */
+
 .home-banner {
   background-color: rgba(154, 190, 231, 0.75);
   padding: 20px;
-  text-align: center;
   margin-bottom: 20px;
+  padding: 0px 10%;
+  text-align: center;
 }
 
 .home-banner h1 {
@@ -138,7 +163,7 @@ body {
 /* Add your custom styles here */
 
 .banner {
-  min-height: 50%;
+  min-height: 65%;
   width: 100%;
   margin-top: 32px;
   display: flex;
@@ -154,32 +179,45 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-left: 5%;
   width: 100%;
 }
 
 .banner-title {
+  text-align: left;
   width: 100%;
 }
 
 .highlighted-text {
   /* Add your color styles */
+  color: dodgerblue;
 }
 
 .banner-subtitle {
-  margin-top: 2rem;
-  text-align: center;
+  margin-top: 0.5rem;
+  text-align: left;
+  width: 100%;
+}
+
+div.banner-description {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0.75rem;
+  padding: 12px 0px;
   width: 100%;
 }
 
 .banner-description {
-  width: 66.666667%;
-  margin-bottom: 0.75rem;
+  text-align: left;
+  width: 50%;
 }
 
 .banner-buttons {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  width: 100%;
 }
 
 .banner-button {
@@ -203,7 +241,14 @@ body {
   }
   .banner-image {
     display: block;
-    width: 33%;
+    width: 40%;
+  }
+  .banner-image-inner {
+    width: 90%;
+  }
+  .banner-image-inner:hover {
+    transform: scale(1.05);
+    transition: all ease-in-out 300ms;
   }
 }
 
@@ -212,9 +257,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding-left: 1px;
-  padding-right: 24px;
-  margin-top: 10px;
+  padding: 40px 24px 40px 1px;
   margin-top: 24px;
 }
 
@@ -250,22 +293,39 @@ body {
   /* Add your description styles */
 }
 
+/* Services */
+.services-container {
+  background-color: var(--secondary-alt);
+}
+
 /* Carousel Item */
+#carousel-body {
+  height: 100%;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
 .carousel-item {
   align-items: center;
-  background-color: #f3f4f6; /* Replace with desired background color */
+  color: #000;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Replace with desired box shadow */
   display: flex;
   flex-direction: column;
-  height: 100%; /* Adjust the height as needed */
+  min-height: 350px; /* Adjust the height as needed */
   justify-content: space-between;
   margin-right: 20px;
   padding: 2rem;
 }
 
+.carousel-item.active {
+  min-height: 350px;
+}
+
 .carousel-item-icon {
-  height: 4rem; /* Adjust the height as needed */
-  width: 4rem; /* Adjust the width as needed */
+  height: 8rem; /* Adjust the height as needed */
+  width: 8rem; /* Adjust the width as needed */
 }
 
 .carousel-item-title {
@@ -284,6 +344,14 @@ body {
   margin-right: 20px; /* Adjust the desired gap size */
 }
 
+.carousel-control-prev {
+  margin: auto 0;
+}
+
+.carousel-control-next {
+  margin: auto 0;
+}
+
 /* the slides */
 .slick-slide {
   background-color: #ebf9ff;
@@ -295,4 +363,41 @@ body {
 .slick-list {
   height: 300px;
   margin: 0 -27px;
+}
+
+/* Contact */
+.contact {
+}
+
+#contact div.container {
+  padding: 24px 0;
+}
+
+#contactForm .form-group {
+  margin: 8px 0px;
+}
+
+#contactForm button {
+  margin-top: 8px;
+}
+
+/* About */
+.about-container {
+  align-items: center;
+  display: flex;
+  margin-top: 12px;
+  justify-content: space-around;
+}
+
+.about {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  @media (max-width: 960px) {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 }

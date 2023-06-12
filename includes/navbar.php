@@ -17,18 +17,19 @@
                     Home
                 </a>
             </li>
-        </ul>
-        <ul class="nav">
             <li class="nav-item">
                 <a href="about.php" aria-current="page" class="nav-link active">
                     About
                 </a>
             </li>
-        </ul>
-        <ul class="nav">
             <li class="nav-item">
                 <a href="services.php" aria-current="page" class="nav-link active">
                     Services
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="services.php" aria-current="page" class="nav-link active">
+                    Contact Us
                 </a>
             </li>
         </ul>
