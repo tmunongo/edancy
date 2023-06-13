@@ -1,0 +1,6 @@
+---
+deployments:
+  - destination: /public_html
+    repository:
+      url: git@github.com:tmunongo/edancy.git
+      branch: main
