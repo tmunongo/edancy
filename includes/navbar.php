@@ -1,3 +1,27 @@
+<?php
+// Set the initial value of $scroll to false
+$scroll = false;
+
+// Function to check if the user has scrolled
+function checkScroll() {
+    echo '<script>
+        window.addEventListener("scroll", function() {
+            // Set the value of the $scroll variable based on the scroll position
+            var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollPosition > 0) {
+                ' . '$scroll = true;' . '
+            } else {
+                ' . '$scroll = false;' . '
+            }
+        });
+    </script>';
+}
+
+// Call the checkScroll function to enable scroll tracking
+checkScroll();
+?>
+
+
 <!DOCTYPE html>
 <html>
 
