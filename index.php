@@ -23,7 +23,7 @@
     <?php
     include_once "includes/navbar.php";
     ?>
-    <div class="banner home-banner" style="margin-top: 0px;   padding-top: 60px;" id="banner">
+    <div id="banner" class="banner home-banner" style="margin-top: 0px;   padding-top: 60px;" id="banner">
         <div class="banner-content">
             <h1 class="banner-title">
                 Welcome to <span class="highlighted-text">Edancy</span> International Consultancy
@@ -65,15 +65,17 @@
             </div>
         </div>
          <!--  The Team section -->
-         <section class="">
+         <section class="" id="team">
             <div class="container">
                 <h3 class="text-center px-8" style="margin-bottom: 24px;">
                     The Founders
                 </h3>
                 <div class="row d-flex align-items-center justify-content-center px-8">
                     <div class="col-lg-6 col-xl-4 mb-4">
-                        <div class="card" style="min-height: 550px;">
-                            <img src="link_to_image" class="card-img-top" alt="Founder Image">
+                        <div class="card" style="min-height: 580px;">
+                            <div class="p-4">
+                                <img src="link_to_image" class="card-img-top" alt="Founder Image">
+                            </div>
                             <div class="card-body">
                             <h5 class="card-title">Dr. Edmore Munongo</h5>
                             <p class="card-text">Founding Co-Director</p>
@@ -101,8 +103,10 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-xl-4 mb-4">
-                        <div class="card" style="min-height: 550px;">
-                            <img src="link_to_image" class="card-img-top" alt="Founder Image">
+                        <div class="card" style="min-height: 580px;">
+                            <div class="p-4">
+                                <img src="link_to_image" class="card-img-top" alt="Founder Image">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Mrs Ancy Manika-Munongo</h5>
                                 <p class="card-text">Founding Co-Director</p>
@@ -128,7 +132,7 @@
             </div>
         </section>
         <!-- Services -->
-        <div class="services-container mt-20 md:px-8 pt-2 pb-16">
+        <div id="services" class="services-container mt-20 md:px-8 pt-2 pb-16">
             <h2 class="services-title mt-3 mb-1 text-center text-althighlight">
                 Services
             </h2>
@@ -165,7 +169,7 @@
                         You can also fill in the form below and we'll respond.
                     </p>
                     </div>
-                    <form id="contactForm" method="POST" action="submit-contact-form.php">
+                    <form id="contactForm" method="POST" action="admin/utils/submit-contact-form.php">
                     <div class="row">
                         <div class="col-md-6">
                         <div class="form-group">
@@ -193,8 +197,9 @@
             </div>
         </section>
         </div>
-
     </div>
+    <!-- Footer -->
+    <?php include_once "includes/footer.php" ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 

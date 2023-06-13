@@ -42,17 +42,22 @@ checkScroll();
                 </a>
             </li>
             <li class="nav-item">
-                <a href="about.php" aria-current="page" class="nav-link active">
+                <a href="#about" aria-current="page" class="nav-link">
                     About
                 </a>
             </li>
             <li class="nav-item">
-                <a href="services.php" aria-current="page" class="nav-link active">
+                <a href="#services" aria-current="page" class="nav-link">
                     Services
                 </a>
             </li>
             <li class="nav-item">
-                <a href="services.php" aria-current="page" class="nav-link active">
+                <a href="#" aria-current="page" class="nav-link">
+                    Blog
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" aria-current="page" class="nav-link">
                     Contact Us
                 </a>
             </li>

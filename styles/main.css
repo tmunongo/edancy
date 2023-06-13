@@ -328,6 +328,22 @@ div.banner-description {
   width: 8rem; /* Adjust the width as needed */
 }
 
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  transition: background-color 300ms;
+}
+
+.social-icon:hover {
+  background-color: blue;
+}
+
+
 .carousel-item-title {
   font-size: 1.2rem; /* Adjust the font size as needed */
   font-weight: 500; /* Adjust the font weight as needed */

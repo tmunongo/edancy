@@ -1,0 +1,12 @@
+{
+    "name": "edancy/edancy",
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "authors": [
+        {
+            "name": "Tawanda",
+            "email": "ejmunongo@gmail.com"
+        }
+    ]
+}
