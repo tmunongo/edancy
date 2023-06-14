@@ -5,6 +5,7 @@ $scroll = false;
 // Function to check if the user has scrolled
 function checkScroll() {
     echo '<script>
+    $(document).ready(function() {
         window.addEventListener("scroll", function() {
             // Set the value of the $scroll variable based on the scroll position
             var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -14,6 +15,7 @@ function checkScroll() {
                 ' . '$scroll = false;' . '
             }
         });
+    });
     </script>';
 }
 
@@ -30,7 +32,7 @@ checkScroll();
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-light <?php echo $scroll ? 'navbar-scroll' : ''; ?>" style="background-color: <?php echo $scroll ? '#E1E8D9' : '#fff'; ?>">
+    <nav class="navbar sticky-top navbar-light">
         <a class="navbar-brand" href="index.php">
             <img src="./assets/images/eic-logo-removebg-preview (1).png" width="200">
         </a>

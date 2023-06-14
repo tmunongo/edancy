@@ -139,10 +139,10 @@
             <p class="services-subtitle mb-2 text-center text-gray-500 text-sm italic">
                 What We Do
             </p>
-            <div class="carousel-container flex items-center justify-around" style="min-height: 350px;">
-            <div id="carousel-body" class="carousel slide" data-bs-ride="carousel">
+            <!-- <div class="carousel-container flex items-center justify-around" style="min-height: 350px;">
+             <div id="carousel-body" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <!-- Carousel items go here -->
+                    Carousel items go here
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carousel-body" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -153,6 +153,39 @@
                     <span class="visually-hidden">Next</span>
                 </button>
                 </div>
+            </div> -->
+            <!-- Services Alt -->
+            <div class="services">
+                <ul class="honeycomb" lang="en">
+                    <li class="honeycomb-cell">
+                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/1">
+                        <div class="honeycomb-cell__title">Diseño exclusivo</div>
+                    </li>
+                    <li class="honeycomb-cell">
+                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/2">
+                        <div class="honeycomb-cell__title">Impermeables</div>
+                    </li>
+                    <li class="honeycomb-cell">
+                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/3">
+                        <div class="honeycomb-cell__title">Tablero doble cara</div>
+                    </li>
+                    <li class="honeycomb-cell">
+                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/4">
+                        <div class="honeycomb-cell__title">Maletín de empaque</div>
+                    </li>
+                    <li class="honeycomb-cell">
+                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/5">
+                        <div class="honeycomb-cell__title">Antireflectivo<small>No vidrio</small></div>
+                    </li>
+                    <li class="honeycomb-cell">
+                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/6">
+                        <div class="honeycomb-cell__title">6 fichas<small>1 de repuesto</small></div>
+                    </li>
+                    <li class="honeycomb-cell">
+                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/7">
+                        <div class="honeycomb-cell__title">Tablero magnético</div>
+                    </li>
+                </ul>
             </div>
           <!-- Contact Us  -->
           <section id="contact" class="bg-light">
@@ -204,33 +237,77 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-       $.each(serviceData, function(index, item) {
-        var carouselItem = $('<div class="carousel-item"></div>');
+    //     $(document).ready(function() {
+    //    $.each(serviceData, function(index, item) {
+    //     var carouselItem = $('<div class="carousel-item"></div>');
 
-        var itemContent = $('<div class="flex flex-col items-center justify-around mx-2 w-72 md:w-96 h-full bg-[#F2F8F3] shadow-md p-8"></div>');
+    //     var itemContent = $('<div class="flex flex-col items-center justify-around mx-2 w-72 md:w-96 h-full bg-[#F2F8F3] shadow-md p-8"></div>');
 
-        var image = $('<img class="d-block m-auto carousel-item-icon" alt="icon">');
-        image.attr('src', item.icon);
+    //     var image = $('<img class="d-block m-auto carousel-item-icon" alt="icon">');
+    //     image.attr('src', item.icon);
 
-        var title = $('<h3 class="text-lg font-medium mb-2 text-center"></h3>').text(item.title);
-        var description = $('<p class="text-gray-600 text-center"></p>').text(item.description);
+    //     var title = $('<h3 class="text-lg font-medium mb-2 text-center"></h3>').text(item.title);
+    //     var description = $('<p class="text-gray-600 text-center"></p>').text(item.description);
 
-        itemContent.append(image, title, description);
-        carouselItem.append(itemContent);
+    //     itemContent.append(image, title, description);
+    //     carouselItem.append(itemContent);
 
-        if (index === 0) {
-            carouselItem.addClass('active');
+    //     if (index === 0) {
+    //         carouselItem.addClass('active');
+    //     }
+
+    //     $('.carousel-inner').append(carouselItem);
+    //     });
+
+    //     $('.carousel').carousel({
+    //         interval: 3500
+    //     });
+    // });
+    </script>
+    <script>
+        // Get the honeycomb element
+        const honeycomb = document.querySelector('.honeycomb');
+
+        // Function to create and append a new honeycomb cell
+        function createHoneycombCell(service) {
+        const { icon, title, description } = service;
+
+        const cell = document.createElement('li');
+        cell.classList.add('honeycomb-cell');
+
+        const imageElement = document.createElement('img');
+        imageElement.classList.add('honeycomb-cell__image');
+        imageElement.src = icon;
+        cell.appendChild(imageElement);
+
+        const titleElement = document.createElement('div');
+        titleElement.classList.add('honeycomb-cell__title');
+        titleElement.textContent = title;
+        cell.appendChild(titleElement);
+
+        const descriptionElement = document.createElement('div');
+        descriptionElement.classList.add('honeycomb-cell__description');
+        descriptionElement.textContent = description;
+        cell.appendChild(descriptionElement);
+
+        return cell;
         }
 
-        $('.carousel-inner').append(carouselItem);
-    });
+        // Function to remove existing honeycomb cells
+        function removeHoneycombCells() {
+            while (honeycomb.firstChild) {
+                honeycomb.removeChild(honeycomb.firstChild);
+            }
+        }
 
-    $('.carousel').carousel({
-        interval: 3500
-    });
-});
+        // Remove existing honeycomb cells
+        removeHoneycombCells();
 
+        // Populate the honeycomb with data from the serviceData object
+        serviceData.forEach((service) => {
+            const cell = createHoneycombCell(service);
+            honeycomb.appendChild(cell);
+        });
     </script>
 </body>
 

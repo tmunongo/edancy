@@ -5,8 +5,9 @@
         <!-- Logo -->
         <img src="./assets/images/eic-logo-removebg-preview (1).png" alt="edancy logo" width="200">
       </div>
-      <div class="col-md-6">
-        <!-- Navigation Links -->
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="col-md-6">
+          <!-- Navigation Links -->
         <ul class="list-inline text-center">
           <li class="list-inline-item"><a href="#">Home</a></li>
           <li class="list-inline-item"><a href="#services">Services</a></li>
@@ -17,29 +18,25 @@
       </div>
       <div class="col-md-3">
         <!-- Social Media Icons -->
-        <!-- <ul class="text-center">
-          <li class="">
+        <ul class="list-inline text-center">
+          <li class="list-inline-item">
             <a href="#">
               <i class="bi bi-facebook social-icon"></i>
             </a>
           </li>
-          <li class="">
-            <a href="#">
-              <i class="bi bi-twitter social-icon"></i>
-            </a>
-          </li>
-          <li class="">
+          <li class="list-inline-item">
             <a href="#">
               <i class="bi bi-linkedin social-icon"></i>
             </a>
           </li>
-          <li class="">
+          <li class="list-inline-item">
             <a href="#">
-              <i class="bi bi-instagram social-icon"></i>
+              <i class="bi bi-mail social-icon"></i>
             </a>
           </li>
-        </ul> -->
+        </ul>
       </div>
+    </div>
     </div>
     <hr>
     <div class="text-center">
