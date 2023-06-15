@@ -3,7 +3,8 @@
 $scroll = false;
 
 // Function to check if the user has scrolled
-function checkScroll() {
+function checkScroll()
+{
     echo '<script>
     $(document).ready(function() {
         window.addEventListener("scroll", function() {
@@ -34,7 +35,7 @@ checkScroll();
 <body>
     <nav class="navbar sticky-top navbar-light">
         <a class="navbar-brand" href="index.php">
-            <img src="./assets/images/eic-logo-removebg-preview (1).png" width="200">
+            <img src="./assets/images/2.png" width="200">
         </a>
         <!-- Add navbar content here -->
         <ul class="nav nav-pills">
