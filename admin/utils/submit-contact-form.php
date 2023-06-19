@@ -1,4 +1,5 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -10,14 +11,14 @@ $mail = new PHPMailer();
 $mail->isSMTP();
 $mail->Host = 'smtp.example.com'; // Replace with your SMTP server
 $mail->SMTPAuth = true;
-$mail->Username = 'your-email@example.com'; // Replace with your SMTP username
-$mail->Password = 'your-password'; // Replace with your SMTP password
+$mail->Username = 'inquiries@edancy.co.zw'; // Replace with your SMTP username
+$mail->Password = 'Ed@ncy2023!'; // Replace with your SMTP password
 $mail->Port = 587; // Replace with the appropriate SMTP port
 $mail->SMTPSecure = 'tls';
 
 // Set From, To, Subject, and Body
-$mail->setFrom('sender@example.com', 'Sender Name'); // Replace with the sender's email and name
-$mail->addAddress('recipient@example.com', 'Recipient Name'); // Replace with the recipient's email and name
+$mail->setFrom('inquiries@edancy.zo.zw', 'Inquiries'); // Replace with the sender's email and name
+$mail->addAddress('edimunongo@edancy.co.zw', 'The Directors'); // Replace with the recipient's email and name
 $mail->Subject = 'New Contact Form Submission';
 
 // Get form input values

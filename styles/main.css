@@ -102,8 +102,8 @@ body {
 }
 
 .login-container h1 {
+  color: #000;
   font-size: 24px;
-  color: #c2d6eb;
 }
 
 .login-form {
@@ -113,10 +113,10 @@ body {
 .login-form label {
   display: block;
   margin-bottom: 5px;
-  color: #c2d6eb;
 }
 
 .login-form input[type="text"],
+.login-form input[type="email"],
 .login-form input[type="password"] {
   width: 100%;
   padding: 8px;

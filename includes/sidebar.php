@@ -10,8 +10,13 @@
         <!-- Add sidebar content here -->
         <ul class="nav flex-column nav-pills sidebar">
             <li class="nav-item sidebar-item" aria-current="page">
-                <a href="../index.php" class="nav-link">
+                <a href="../admin/index.php" class="nav-link">
                     <i class="fa fa-home" aria-hidden="true"></i> Home
+                </a>
+            </li>
+            <li class="nav-item sidebar-item" aria-current="page">
+                <a href="../admin/manage-home.php" class="nav-link">
+                    <i class="fa fa-home" aria-hidden="true"></i> Update Home Page
                 </a>
             </li>
             <li class="nav-item sidebar-item" aria-current="page">
