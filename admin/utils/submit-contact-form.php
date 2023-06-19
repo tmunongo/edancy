@@ -12,7 +12,7 @@ $mail->isSMTP();
 $mail->Host = 'smtp.example.com'; // Replace with your SMTP server
 $mail->SMTPAuth = true;
 $mail->Username = 'inquiries@edancy.co.zw'; // Replace with your SMTP username
-$mail->Password = 'Ed@ncy2023!'; // Replace with your SMTP password
+$mail->Password = ''; // Replace with your SMTP password
 $mail->Port = 587; // Replace with the appropriate SMTP port
 $mail->SMTPSecure = 'tls';
 
