@@ -55,8 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="min-height: 100vh; display: flex; align-items: center; justify-content:center;">
         <div class="login-container">
+
+            <img src="../assets/images/2.png" alt="edancy logo" class="mb-4">
 
             <h1>Admin Login</h1>
             <!-- Add login form here -->
@@ -65,8 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="email" name="email" id="email" required><br>
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password" required><br>
-                <input type="submit" value="Log In">
-                <p>
+                <input type="submit" value="Log In" class="btn btn-primary">
+                <p class="my-4">
                     <a href="register.php">
                         No Account? Register Here.
                     </a>

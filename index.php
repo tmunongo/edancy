@@ -21,11 +21,33 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // Extract individual data fields
 $title = $pageData['title'];
 $subtitle = $pageData['subtitle'];
-$description = $pageData['description'];
+$banner_description = $pageData['description'];
 $about_description = $pageData['about_description'];
-$services_title = $pageData['services_title'];
-$services_description = $pageData['services_description'];
+// $services_title = $pageData['services_title'];
+// $services_description = $pageData['services_description'];
 $contact_description = $pageData['contact_description'];
+
+// Fetch data from the database and generate a PHP array
+
+// Generate the JavaScript code dynamically using PHP
+$jsCode = "";
+$counter = 1;
+foreach ($services as $service) {
+    $title = $service['title'];
+    $description = $service['description'];
+
+    $serviceVar = "service{$counter}";
+    $cellVar = "cell{$counter}";
+
+    $jsCode .= "const $serviceVar = {";
+    $jsCode .= "title: '$title',";
+    $jsCode .= "description: '$description'";
+    $jsCode .= "};";
+    $jsCode .= "const $cellVar = createHoneycombCell($serviceVar);";
+    $jsCode .= "honeycomb.appendChild($cellVar);";
+
+    $counter++;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,19 +86,19 @@ $contact_description = $pageData['contact_description'];
             </h3>
             <div class="banner-description">
                 <p class="banner-description">
-                    <?php echo $description ?>
+                    <?php echo $banner_description ?>
                 </p>
             </div>
             <div class="banner-buttons">
-                <button class="banner-button banner-button-services">
+                <button class="banner-button banner-button-services" onclick="location.href='#services'">
                     Our Services
                 </button>
-                <button class="banner-button banner-button-contact">
+                <button class="banner-button banner-button-contact" onclick="location.href='#contact'">
                     Get in touch!
                 </button>
             </div>
         </div>
-        <div class="banner-image">
+        <div class=" banner-image">
             <div class="banner-image-inner">
                 <img src="./assets/images/Public health-amico.svg" alt="Banner image" />
             </div>
@@ -153,9 +175,9 @@ $contact_description = $pageData['contact_description'];
             <h2 class="services-title mt-3 mb-1 py-4 text-center text-althighlight">
                 Services
             </h2>
-            <p class="services-subtitle mb-2 text-center text-gray-500 text-sm italic">
+            <h3 class="services-subtitle mb-2 text-center text-gray-500 text-sm italic">
                 What We Do
-            </p>
+            </h3>
             <!-- <div class="carousel-container flex items-center justify-around" style="min-height: 350px;">
              <div id="carousel-body" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -177,30 +199,6 @@ $contact_description = $pageData['contact_description'];
                     <li class="honeycomb-cell">
                         <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/1">
                         <div class="honeycomb-cell__title">Diseño exclusivo</div>
-                    </li>
-                    <li class="honeycomb-cell">
-                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/2">
-                        <div class="honeycomb-cell__title">Impermeables</div>
-                    </li>
-                    <li class="honeycomb-cell">
-                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/3">
-                        <div class="honeycomb-cell__title">Tablero doble cara</div>
-                    </li>
-                    <li class="honeycomb-cell">
-                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/4">
-                        <div class="honeycomb-cell__title">Maletín de empaque</div>
-                    </li>
-                    <li class="honeycomb-cell">
-                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/5">
-                        <div class="honeycomb-cell__title">Antireflectivo<small>No vidrio</small></div>
-                    </li>
-                    <li class="honeycomb-cell">
-                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/6">
-                        <div class="honeycomb-cell__title">6 fichas<small>1 de repuesto</small></div>
-                    </li>
-                    <li class="honeycomb-cell">
-                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/7">
-                        <div class="honeycomb-cell__title">Tablero magnético</div>
                     </li>
                 </ul>
             </section>
@@ -283,13 +281,12 @@ $contact_description = $pageData['contact_description'];
         // });
     </script>
     <script>
-        // Get the honeycomb element
+        // JavaScript code to handle honeycomb creation and appending
         const honeycomb = document.querySelector('.honeycomb');
 
         // Function to create and append a new honeycomb cell
         function createHoneycombCell(service) {
             const {
-                icon,
                 title,
                 description
             } = service;
@@ -299,7 +296,7 @@ $contact_description = $pageData['contact_description'];
 
             const imageElement = document.createElement('img');
             imageElement.classList.add('honeycomb-cell__image');
-            imageElement.src = icon;
+            imageElement.src = 'assets/images/blurry-gradient-haikei.png';
             cell.appendChild(imageElement);
 
             const titleElement = document.createElement('div');
@@ -325,11 +322,7 @@ $contact_description = $pageData['contact_description'];
         // Remove existing honeycomb cells
         removeHoneycombCells();
 
-        // Populate the honeycomb with data from the serviceData object
-        serviceData.forEach((service) => {
-            const cell = createHoneycombCell(service);
-            honeycomb.appendChild(cell);
-        });
+        <?php echo $jsCode; ?> // Inject the dynamically generated JavaScript code
     </script>
 </body>
 

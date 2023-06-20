@@ -39,6 +39,7 @@ $contact_description = $pageData['contact_description'];
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body class="admin-body">
@@ -81,7 +82,7 @@ $contact_description = $pageData['contact_description'];
                 <?php foreach ($founders as $index => $founder) : ?>
                     <div class="founder-section">
                         <h3>Founder <?php echo $index + 1; ?></h3>
-                        <input type="hidden" name="founder_id[]" value="<?php $founder['id'] ?>">
+                        <input type="hidden" name="founder_id[]" value="<?php echo $founder['id'] ?>">
                         <div class="mb-3">
                             <label for="founder_title_<?php echo $index; ?>">Title:</label>
                             <input type="text" class="form-control" id="founder_title_<?php echo $index; ?>" name="founder_title[]" value="<?php echo $founder['founder_title']; ?>">
@@ -121,20 +122,22 @@ $contact_description = $pageData['contact_description'];
             </div>
 
             <h2>Services</h2>
+            <div id="servicesContainer">
 
-            <?php foreach ($services as $service) : ?>
-                <input type="hidden" name="service_id[]" value="<?php $service['id'] ?>">
-                <div class="mb-3">
-                    <label for="service_title_<?php echo $service['id']; ?>">Title:</label>
-                    <input type="text" class="form-control" id="service_title_<?php echo $service['id']; ?>" name="service_title[]" value="<?php echo $service['title']; ?>">
-                </div>
+                <?php foreach ($services as $service) : ?>
+                    <input type="hidden" name="service_id[]" value="<?php echo $service['id'] ?>">
+                    <div class="mb-3">
+                        <label for="service_title_<?php echo $service['id']; ?>">Title:</label>
+                        <input type="text" class="form-control" id="service_title_<?php echo $service['id']; ?>" name="service_title[]" value="<?php echo $service['title']; ?>">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="service_description_<?php echo $service['id']; ?>">Description:</label>
-                    <textarea class="form-control" id="service_description_<?php echo $service['id']; ?>" name="service_description[]"><?php echo $service['description']; ?></textarea>
-                </div>
-            <?php endforeach; ?>
+                    <div class="mb-3">
+                        <label for="service_description_<?php echo $service['id']; ?>">Description:</label>
+                        <textarea class="form-control" id="service_description_<?php echo $service['id']; ?>" name="service_description[]"><?php echo $service['description']; ?></textarea>
+                    </div>
+                <?php endforeach; ?>
 
+            </div>
             <button type="button" class="btn btn-primary" id="addServiceBtn">Add New Service</button>
 
 
@@ -149,55 +152,44 @@ $contact_description = $pageData['contact_description'];
         </form>
     </div>
     <script>
-        // JavaScript code to add new founder sections
-        const addFounderBtn = document.getElementById('add-founder-btn');
-        const foundersContainer = document.getElementById('founders-container');
-        let founderIndex = <?php echo count($founders); ?>;
+        // jQuery code to handle adding new services
+        $(document).ready(function() {
+            $('#addServiceBtn').on('click', function() {
+                var servicesContainer = $('#servicesContainer');
+                var serviceIndex = servicesContainer.children().length / 2; // Divide by 2 to account for the label + input/textarea fields
 
-        addFounderBtn.addEventListener('click', function() {
-            const newFounderSection = document.createElement('div');
-            newFounderSection.className = 'founder-section mb-3';
+                var idInput = $('<input>')
+                    .attr('type', 'hidden')
+                    .attr('class', 'form-control')
+                    .attr('name', 'service_id[]')
 
-            const html = `
-      <h4>Founder ${founderIndex + 1}</h4>
-      <!-- Founder fields... -->
-    `;
+                var titleInput = $('<input>')
+                    .attr('type', 'text')
+                    .attr('class', 'form-control')
+                    .attr('name', 'service_title[]')
+                    .attr('placeholder', 'Service Title');
 
-            newFounderSection.innerHTML = html;
-            foundersContainer.appendChild(newFounderSection);
+                var descriptionTextarea = $('<textarea>')
+                    .attr('class', 'form-control')
+                    .attr('name', 'service_description[]')
+                    .attr('placeholder', 'Service Description');
 
-            founderIndex++;
+                var divWrapper = $('<div>')
+                    .attr('class', 'mb-3')
+                    .append(idInput)
+                    .append(titleInput)
+
+
+                var descriptionWrapper = $('<div>')
+                    .attr('class', 'mb-3')
+                    .append(descriptionTextarea);
+
+                servicesContainer.append(divWrapper);
+                servicesContainer.append(descriptionWrapper);
+            });
         });
     </script>
-    <script>
-        // JavaScript code to handle adding new services
-        document.getElementById('addServiceBtn').addEventListener('click', function() {
-            var servicesContainer = document.getElementById('servicesContainer');
-            var serviceIndex = servicesContainer.children.length / 2; // Divide by 2 to account for the label + input/textarea fields
 
-            var titleInput = document.createElement('input');
-            titleInput.setAttribute('type', 'text');
-            titleInput.setAttribute('class', 'form-control');
-            titleInput.setAttribute('name', 'service_title[]');
-            titleInput.setAttribute('placeholder', 'Service Title');
-
-            var descriptionTextarea = document.createElement('textarea');
-            descriptionTextarea.setAttribute('class', 'form-control');
-            descriptionTextarea.setAttribute('name', 'service_description[]');
-            descriptionTextarea.setAttribute('placeholder', 'Service Description');
-
-            var divWrapper = document.createElement('div');
-            divWrapper.setAttribute('class', 'mb-3');
-            divWrapper.appendChild(titleInput);
-
-            var descriptionWrapper = document.createElement('div');
-            descriptionWrapper.setAttribute('class', 'mb-3');
-            descriptionWrapper.appendChild(descriptionTextarea);
-
-            servicesContainer.appendChild(divWrapper);
-            servicesContainer.appendChild(descriptionWrapper);
-        });
-    </script>
     <script>
         ClassicEditor
             .create(document.querySelector('#description-box'))

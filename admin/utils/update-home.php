@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Update the founders data in the database
     foreach ($_POST['founder_id'] as $index => $founderId) {
+        var_dump($founderId);
         $founderTitle = $_POST['founder_title'][$index];
         $founderName = $_POST['founder_name'][$index];
         $founderDescription = $_POST['founder_description'][$index];
@@ -65,17 +66,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $serviceTitle = $_POST['service_title'][$index];
         $serviceDescription = $_POST['service_description'][$index];
 
-        $serviceUpdateQuery = "UPDATE services SET 
+        if ($serviceId) {
+            // Update existing service
+            $serviceUpdateQuery = "UPDATE services SET 
             title = :serviceTitle,
             description = :serviceDescription
             WHERE id = :serviceId";
 
-        $serviceUpdateStmt = $db->prepare($serviceUpdateQuery);
-        $serviceUpdateStmt->bindParam(':serviceTitle', $serviceTitle);
-        $serviceUpdateStmt->bindParam(':serviceDescription', $serviceDescription);
-        $serviceUpdateStmt->bindParam(':serviceId', $serviceId);
-        $serviceUpdateStmt->execute();
+            $serviceUpdateStmt = $db->prepare($serviceUpdateQuery);
+            $serviceUpdateStmt->bindParam(':serviceTitle', $serviceTitle);
+            $serviceUpdateStmt->bindParam(':serviceDescription', $serviceDescription);
+            $serviceUpdateStmt->bindParam(':serviceId', $serviceId);
+            $serviceUpdateStmt->execute();
+        } else {
+            // Insert new service
+            $serviceInsertQuery = "INSERT INTO services (title, description) 
+            VALUES (:serviceTitle, :serviceDescription)";
+
+            $serviceInsertStmt = $db->prepare($serviceInsertQuery);
+            $serviceInsertStmt->bindParam(':serviceTitle', $serviceTitle);
+            $serviceInsertStmt->bindParam(':serviceDescription', $serviceDescription);
+            $serviceInsertStmt->execute();
+        }
     }
+
 
     header("Location: " . "../manage-home.php");
 }

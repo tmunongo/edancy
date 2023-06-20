@@ -15,6 +15,7 @@
 body {
   /* font-family: "Roboto", sans-serif; */
   background-color: #ebf9ff;
+  min-height: 100vh;
 }
 
 .container {
@@ -94,7 +95,7 @@ body {
 
 /* Admin login page styles */
 .login-container {
-  max-width: 400px;
+  width: 35%;
   margin: 0 auto;
   padding: 20px;
   background-color: #b2d8d8;
@@ -126,7 +127,6 @@ body {
 }
 
 .login-form input[type="submit"] {
-  background-color: #c2d6eb;
   color: #fff;
   padding: 10px;
   border: none;
@@ -322,11 +322,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
+  margin: 8px auto;
+  padding: 2px;
   transform: translateY(34.375px);
 }
 
