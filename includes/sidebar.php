@@ -10,12 +10,12 @@
         <!-- Add sidebar content here -->
         <ul class="nav flex-column nav-pills sidebar">
             <li class="nav-item sidebar-item" aria-current="page">
-                <a href="../admin/index.php" class="nav-link">
+                <a href="http://www.hearts.co.zw/admin/index.php" class="nav-link">
                     <i class="fa fa-home" aria-hidden="true"></i> Home
                 </a>
             </li>
             <li class="nav-item sidebar-item" aria-current="page">
-                <a href="../admin/manage-home.php" class="nav-link">
+                <a href="http://www.hearts.co.zw/admin/manage-home.php" class="nav-link">
                     <i class="fa fa-home" aria-hidden="true"></i> Update Home Page
                 </a>
             </li>
@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li class="nav-item sidebar-item" aria-current="page">
-                <a href="posts/newpost.php" class="nav-link">
+                <a href="http://www.hearts.co.zw/admin/posts/newpost.php" class="nav-link">
                     <i class="fas fa-notes-medical    "></i> New Post
                 </a>
             </li>
@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li class="nav-item sidebar-item" aria-current="page">
-                <a href="utils/logout.php" class="nav-link">
+                <a href="http://www.hearts.co.zw/admin/utils/logout.php" class="nav-link">
                     <i class="fas fa-power-off    "></i> Logout
                 </a>
             </li>
