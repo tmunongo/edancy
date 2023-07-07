@@ -19,7 +19,7 @@ $stmt->execute();
 $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Extract individual data fields
-$title = $pageData['title'];
+$banner_title = $pageData['title'];
 $subtitle = $pageData['subtitle'];
 $banner_description = $pageData['description'];
 $about_description = $pageData['about_description'];
@@ -79,7 +79,7 @@ foreach ($services as $service) {
     <div id="banner" class="banner home-banner" id="banner">
         <div class="banner-content">
             <h1 class="banner-title">
-                <?php echo $title ?>
+                <?php echo $banner_title ?>
             </h1>
             <h3 class="banner-subtitle">
                 <?php echo $subtitle ?>
