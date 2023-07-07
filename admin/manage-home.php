@@ -138,7 +138,8 @@ $contact_description = $pageData['contact_description'];
                 <?php endforeach; ?>
 
             </div>
-            <button type="button" class="btn btn-primary" id="addServiceBtn">Add New Service</button>
+            <label for="addService">Click to Add Service</label>
+            <button name="addService" type="button" class="btn btn-primary" id="addServiceBtn">Add New Service</button>
 
 
             <h2>Contact</h2>

@@ -333,7 +333,7 @@ body {
 .honeycomb-cell {
   flex: 0 1 250px;
   max-width: 250px;
-  height: 137.5px;
+  height: 147.5px;
   margin: 65.625px 12.5px;
   position: relative;
   padding: 0.5em;

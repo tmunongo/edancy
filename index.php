@@ -126,7 +126,7 @@ foreach ($services as $service) {
                 <div class="row d-flex align-items-center justify-content-center px-8">
                     <?php foreach ($founders as $founder) echo '
                     <div class="col-lg-6 col-xl-4 mb-4">
-                        <div class="card" style="min-height: 750px;">
+                        <div class="card" style="height: 750px; overflow-y: scroll;">
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-center">
                                     <div class="p-4">
