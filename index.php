@@ -124,47 +124,46 @@ foreach ($services as $service) {
                     The Founders
                 </h3>
                 <div class="row d-flex align-items-center justify-content-center px-8">
-                    <?php foreach ($founders as $founder) echo '
-                    <div class="col-lg-6 col-xl-4 mb-4">
-                        <div class="card" style="height: 750px; overflow-y: scroll;">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <div class="p-4">
-                                        <img src="./assets/images/man.jpg" class="card-img-top" alt="Founder Image">
-                                    </div>
-                                    <div>
-                                        <h5 class="card-title" style="text-transform: capitalize;">' . $founder['founder_title'] . " " . $founder['founder_name'] . '</h5>
-                                        <p class="card-text">' . $founder['role'] . '</p>
-                                        <div class="d-flex align-items-center justify-content-between p-2">
-                                            <a href="' . $founder['fb_link'] . '">
-
-                                                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                                    <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
-                                                </svg>
-                                            </a> 
-                                            <a href="' . $founder['linkedin_link'] . '">
-                                                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                                    <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
-                                                </svg>
-                                            </a>
-                                            <a href="mailto:' . $founder['email'] . '">
-
-                                                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                                    <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
-                                                </svg>
-                                            </a>
+                    <div class="row justify-content-center">
+                        <?php foreach ($founders as $founder) : ?>
+                            <div class="col-lg-6 col-xl-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body d-flex flex-column align-items-center">
+                                        <div class="d-flex align-items-center justify-content-center mb-4">
+                                            <div class="p-4">
+                                                <img src="./assets/images/man.jpg" class="card-img-top" alt="Founder Image">
+                                            </div>
+                                            <div>
+                                                <h5 class="card-title" style="text-transform: capitalize;"><?php echo $founder['founder_title'] . " " . $founder['founder_name']; ?></h5>
+                                                <p class="card-text"><?php echo $founder['role']; ?></p>
+                                                <div class="d-flex align-items-center justify-content-between p-2">
+                                                    <a href="<?php echo $founder['fb_link']; ?>">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+                                                            <!-- Font Awesome icon -->
+                                                        </svg>
+                                                    </a>
+                                                    <a href="<?php echo $founder['linkedin_link']; ?>">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512">
+                                                            <!-- Font Awesome icon -->
+                                                        </svg>
+                                                    </a>
+                                                    <a href="mailto:<?php echo $founder['email']; ?>">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+                                                            <!-- Font Awesome icon -->
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <ul class="flex-grow-1">
+                                            <?php echo $founder['founder_details']; ?>
+                                        </ul>
                                     </div>
                                 </div>
-                                <ul>
-                                ' .
-                        $founder['founder_details']
-                        . '
-                                </ul>
                             </div>
-                        </div>
-                    </div>';
-                    ?>
+                        <?php endforeach; ?>
+                    </div>
+
 
                     <!-- Repeat the above card markup for each employee -->
                 </div>
