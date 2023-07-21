@@ -61,6 +61,8 @@ foreach ($services as $service) {
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <!-- Bootstrap v5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-lKxxNtSf1msXp2MO0sn8RdfmG4kIvkgjvge/AtVSy/HbBq2E+Hov2hGsruuys1+MPbBcQ2qDXj2W8LOdhjJdA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- JQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Slick Carousel JS -->
@@ -118,7 +120,7 @@ foreach ($services as $service) {
             </div>
         </div>
         <!--  The Team section -->
-        <section class="bg-light p-4" id="team">
+        <section class="bg-light p-sm-1 p-md-4" id="team">
             <div class="container">
                 <h3 class="text-center my-8" style="margin-bottom: 24px;">
                     The Founders
@@ -126,14 +128,14 @@ foreach ($services as $service) {
                 <div class="row d-flex align-items-center justify-content-center px-8">
                     <div class="row justify-content-center">
                         <?php foreach ($founders as $founder) : ?>
-                            <div class="col-lg-6 col-xl-4 mb-4">
+                            <div class="col-lg-8 col-xl-5 mb-4">
                                 <div class="card h-100">
                                     <div class="card-body d-flex flex-column align-items-center">
                                         <div class="d-flex align-items-center justify-content-center mb-4">
                                             <div class="p-4">
-                                                <img src="./assets/images/man.jpg" class="card-img-top" alt="Founder Image">
+                                                <img src="<?php echo $founder['founder_image'] ?>" class="card-img-top" alt="Founder Image">
                                             </div>
-                                            <div>
+                                            <div class="my-auto">
                                                 <h5 class="card-title" style="text-transform: capitalize;"><?php echo $founder['founder_title'] . " " . $founder['founder_name']; ?></h5>
                                                 <p class="card-text"><?php echo $founder['role']; ?></p>
                                                 <div class="d-flex align-items-center justify-content-between p-2">
@@ -142,7 +144,7 @@ foreach ($services as $service) {
                                                             <!-- Font Awesome icon -->
                                                         </svg>
                                                     </a>
-                                                    <a href="<?php echo $founder['linkedin_link']; ?>">
+                                                    <a href="<?php echo $founder['linkedin_link']; ?>" style="">
                                                         <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512">
                                                             <!-- Font Awesome icon -->
                                                         </svg>
@@ -155,8 +157,9 @@ foreach ($services as $service) {
                                                 </div>
                                             </div>
                                         </div>
+
                                         <ul class="flex-grow-1">
-                                            <?php echo $founder['founder_details']; ?>
+                                            <textarea class="" name="" id="" style="border: 0px;" cols="25" rows="15" readonly><?php echo $founder['founder_details']; ?></textarea>
                                         </ul>
                                     </div>
                                 </div>

@@ -33,39 +33,47 @@ checkScroll();
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-light">
-        <a class="navbar-brand" href="index.php">
-            <img src="./assets/images/2.png" width="200">
-        </a>
-        <!-- Add navbar content here -->
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a href="index.php" aria-current="page" class="nav-link active">
-                    Home
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#about" aria-current="page" class="nav-link">
-                    About
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#services" aria-current="page" class="nav-link">
-                    Services
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" aria-current="page" class="nav-link">
-                    Blog
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#contact" aria-current="page" class="nav-link">
-                    Contact Us
-                </a>
-            </li>
-        </ul>
+    <nav class="navbar sticky-top navbar-light navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.php" style="margin: 0px;">
+                <img src="./assets/images/2.png" width="200" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Add navbar content here -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-pills me-auto mb-2 mb-lg-0">
+                    <li class="nav-item p-2">
+                        <a href="index.php" class="nav-link <?php echo ($_SERVER['PHP_SELF'] == '/index.php') ? 'active' : ''; ?>">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item p-2">
+                        <a href="#about" class="nav-link <?php echo ($_SERVER['PHP_SELF'] == '/index.php/#about') ? 'active' : ''; ?>">
+                            About
+                        </a>
+                    </li>
+                    <li class="nav-item p-2">
+                        <a href="#services" class="nav-link <?php echo ($_SERVER['PHP_SELF'] == '/index.php#services') ? 'active' : ''; ?>">
+                            Services
+                        </a>
+                    </li>
+                    <li class="nav-item p-2">
+                        <a href="#" class="nav-link <?php echo ($_SERVER['PHP_SELF'] == '/blog.php') ? 'active' : ''; ?>">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="nav-item p-2">
+                        <a href="#contact" class="nav-link <?php echo ($_SERVER['PHP_SELF'] == '/#contact') ? 'active' : ''; ?>">
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
+
 </body>
 
 </html>
