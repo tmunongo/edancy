@@ -28,10 +28,6 @@ checkScroll();
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Navbar</title>
-</head>
-
 <body>
     <nav class="navbar sticky-top navbar-light navbar-expand-lg">
         <div class="container-fluid">
@@ -43,7 +39,7 @@ checkScroll();
             </button>
             <!-- Add navbar content here -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-pills me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav nav-pills m-auto mb-2 mb-lg-0">
                     <li class="nav-item p-2">
                         <a href="index.php" class="nav-link <?php echo ($_SERVER['PHP_SELF'] == '/index.php') ? 'active' : ''; ?>">
                             Home
