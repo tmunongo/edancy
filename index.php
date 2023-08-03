@@ -105,59 +105,6 @@ include('includes/header.php')
                 </div>
             </div>
         </div>
-        <!--  The Team section -->
-        <section class="bg-light p-sm-1 p-md-4" id="team">
-            <div class="container">
-                <h3 class="text-center my-8" style="margin-bottom: 24px;">
-                    The Founders
-                </h3>
-                <div class="row d-flex align-items-center justify-content-center px-8">
-                    <div class="row justify-content-center">
-                        <?php foreach ($founders as $founder) : ?>
-                            <div class="col-lg-8 col-xl-5 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-body d-flex flex-column align-items-center">
-                                        <div class="d-flex align-items-center justify-content-center mb-4">
-                                            <div class="p-4">
-                                                <img src="<?php echo $founder['founder_image'] ?>" class="card-img-top" alt="Founder Image">
-                                            </div>
-                                            <div class="my-auto">
-                                                <h5 class="card-title" style="text-transform: capitalize;"><?php echo $founder['founder_title'] . " " . $founder['founder_name']; ?></h5>
-                                                <p class="card-text"><?php echo $founder['role']; ?></p>
-                                                <div class="d-flex align-items-center justify-content-between p-2">
-                                                    <a href="<?php echo $founder['fb_link']; ?>">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
-                                                            <!-- Font Awesome icon -->
-                                                        </svg>
-                                                    </a>
-                                                    <a href="<?php echo $founder['linkedin_link']; ?>" style="">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512">
-                                                            <!-- Font Awesome icon -->
-                                                        </svg>
-                                                    </a>
-                                                    <a href="mailto:<?php echo $founder['email']; ?>">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
-                                                            <!-- Font Awesome icon -->
-                                                        </svg>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <ul class="flex-grow-1">
-                                            <textarea class="" name="" id="" style="border: 0px;" cols="25" rows="15" readonly><?php echo $founder['founder_details']; ?></textarea>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-
-
-                    <!-- Repeat the above card markup for each employee -->
-                </div>
-            </div>
-        </section>
         <!-- Services -->
         <div id="services" class="services-container mt-20 md:px-8 pt-2 pb-16">
             <h2 class="services-title mt-3 mb-1 py-4 text-center text-althighlight">
@@ -166,29 +113,74 @@ include('includes/header.php')
             <h3 class="services-subtitle mb-2 text-center text-gray-500 text-sm italic">
                 What We Do
             </h3>
-            <!-- <div class="carousel-container flex items-center justify-around" style="min-height: 350px;">
-             <div id="carousel-body" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    Carousel items go here
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-body" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carousel-body" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                </div>
-            </div> -->
             <!-- Services Alt -->
             <section class="services">
-                <ul class="honeycomb" lang="en">
-                    <li class="honeycomb-cell">
-                        <img class="honeycomb-cell__image" src="https://source.unsplash.com/random/1">
-                        <div class="honeycomb-cell__title">Diseño exclusivo</div>
-                    </li>
-                </ul>
+                <div class="container text-center">
+                    <ul class="row col-12 mt-5">
+                        <?php foreach ($services as $service) : ?>
+                            <li class="col  d-flex flex-column justify-content-center align-items-center shadow-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                    <path d="M160 96a96 96 0 1 1 192 0A96 96 0 1 1 160 96zm80 152V512l-48.4-24.2c-20.9-10.4-43.5-17-66.8-19.3l-96-9.6C12.5 457.2 0 443.5 0 427V224c0-17.7 14.3-32 32-32H62.3c63.6 0 125.6 19.6 177.7 56zm32 264V248c52.1-36.4 114.1-56 177.7-56H480c17.7 0 32 14.3 32 32V427c0 16.4-12.5 30.2-28.8 31.8l-96 9.6c-23.2 2.3-45.9 8.9-66.8 19.3L272 512z" />
+                                </svg>
+                                <h3 class="mt-3 fw-semibold"><?= $service['title'] ?></h3>
+                                <p><?= $service['description'] ?></p>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </section>
+            <!--  The Team section -->
+            <section class="bg-light p-sm-1 p-md-4" id="team">
+                <div class="container">
+                    <h3 class="text-center my-8" style="margin-bottom: 24px;">
+                        The Founders
+                    </h3>
+                    <div class="row d-flex align-items-center justify-content-center px-8">
+                        <div class="row justify-content-center">
+                            <?php foreach ($founders as $founder) : ?>
+                                <div class="col-lg-8 col-xl-5 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <div class="d-flex align-items-center justify-content-center mb-4">
+                                                <div class="p-4">
+                                                    <img src="<?php echo $founder['founder_image'] ?>" class="card-img-top" alt="Founder Image">
+                                                </div>
+                                                <div class="my-auto">
+                                                    <h5 class="card-title" style="text-transform: capitalize;"><?php echo $founder['founder_title'] . " " . $founder['founder_name']; ?></h5>
+                                                    <p class="card-text"><?php echo $founder['role']; ?></p>
+                                                    <div class="d-flex align-items-center justify-content-between p-2">
+                                                        <a href="<?php echo $founder['fb_link']; ?>">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+                                                                <!-- Font Awesome icon -->
+                                                            </svg>
+                                                        </a>
+                                                        <a href="<?php echo $founder['linkedin_link']; ?>" style="">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512">
+                                                                <!-- Font Awesome icon -->
+                                                            </svg>
+                                                        </a>
+                                                        <a href="mailto:<?php echo $founder['email']; ?>">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+                                                                <!-- Font Awesome icon -->
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <ul class="flex-grow-1">
+                                                <textarea class="" name="" id="" style="border: 0px;" cols="25" rows="15" readonly><?php echo $founder['founder_details']; ?></textarea>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+
+
+                        <!-- Repeat the above card markup for each employee -->
+                    </div>
+                </div>
             </section>
             <!-- Contact Us  -->
             <section id="contact" class="bg-light">
